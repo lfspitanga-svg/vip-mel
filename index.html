@@ -186,10 +186,36 @@
   .disclaimer{color:#77777f;font-size:.8rem;max-width:600px;margin:14px auto 0;line-height:1.5}
   .plus18{display:inline-block;border:1px solid #77777f;border-radius:6px;padding:1px 7px;font-weight:800;font-size:.75rem;margin-right:6px;color:#a5a5ad}
 
+  /* LIVE PANEL */
+  .live-panel{background:linear-gradient(180deg,rgba(255,159,10,.06),rgba(255,159,10,0)),var(--bg-2);border:1px solid var(--line);border-radius:22px;padding:26px 24px}
+  .live-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+  .live-badge{display:inline-flex;align-items:center;gap:9px;font-weight:800;letter-spacing:1.5px;font-size:.82rem;color:#ff5a5a}
+  .live-badge .pulse{width:10px;height:10px;border-radius:50%;background:#ff3b3b;animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,59,59,.55)}70%{box-shadow:0 0 0 12px rgba(255,59,59,0)}100%{box-shadow:0 0 0 0 rgba(255,59,59,0)}}
+  .live-date{color:#8f8f98;font-size:.85rem}
+  .live-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .live-stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px 12px;text-align:center}
+  .live-stat .lv-num{font-family:'Anton',sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1;color:var(--white)}
+  .live-stat.is-green .lv-num{color:#22c55e}
+  .live-stat.is-red .lv-num{color:#ff5a5a}
+  .live-stat .lv-lbl{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:8px}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .testi{background:var(--bg-2);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px}
+  .testi .stars{color:var(--amber-2);letter-spacing:3px;font-size:1.05rem}
+  .testi blockquote{color:#e6e6ea;font-size:1rem;line-height:1.6}
+  .testi figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .testi .av{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;color:#1a1200;background:linear-gradient(180deg,var(--amber-2),var(--amber))}
+  .testi figcaption b{display:block;font-size:.95rem}
+  .testi figcaption span{color:#8f8f98;font-size:.82rem}
+
   @media(max-width:820px){
     .stats{grid-template-columns:repeat(2,1fr)}
     .greens{grid-template-columns:1fr;max-width:460px;margin:0 auto}
     .why{grid-template-columns:1fr}
+    .live-grid{grid-template-columns:repeat(2,1fr)}
+    .testi-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
     .nav-cta.hide-mobile{display:none}
   }
 </style>
@@ -236,6 +262,21 @@
   </div>
 </div>
 
+<section class="wrap" id="placar">
+  <div class="live-panel">
+    <div class="live-head">
+      <span class="live-badge"><span class="pulse"></span> AO VIVO</span>
+      <span class="live-date">Atualizado hoje</span>
+    </div>
+    <div class="live-grid">
+      <div class="live-stat is-green"><div class="lv-num">5</div><div class="lv-lbl">Greens hoje</div></div>
+      <div class="live-stat is-red"><div class="lv-num">1</div><div class="lv-lbl">Red hoje</div></div>
+      <div class="live-stat"><div class="lv-num">+20%</div><div class="lv-lbl">ROI no mês</div></div>
+      <div class="live-stat"><div class="lv-num">83%</div><div class="lv-lbl">Assertividade</div></div>
+    </div>
+  </div>
+</section>
+
 <section class="wrap" id="greens">
   <div class="sec-head">
     <div class="ey">Prova na mesa</div>
@@ -258,10 +299,11 @@
   </div>
 </section>
 
-<section class="wrap" id="why">
+<section class="wrap" id="diferenciais">
   <div class="sec-head">
-    <div class="ey">Por que o VIP</div>
-    <h2>Não é palpite. É método.</h2>
+    <div class="ey">Diferenciais do grupo</div>
+    <h2>Por que o VIP Mel é diferente</h2>
+    <p>Não é palpite, é método. Veja o que você recebe ao entrar no grupo.</p>
   </div>
   <div class="why">
     <div class="feat">
@@ -279,6 +321,46 @@
       <h3>Transparência total</h3>
       <p>Green e red postados. O print fica no grupo — você acompanha o resultado real.</p>
     </div>
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <h3>Entradas com antecedência</h3>
+      <p>Você recebe a tip antes do jogo — tempo de sobra pra pegar a odd cheia.</p>
+    </div>
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></div>
+      <h3>Sinais todos os dias</h3>
+      <p>Múltiplas e simples analisadas diariamente — sempre tem entrada de valor no grupo.</p>
+    </div>
+    <div class="feat">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Suporte próximo</h3>
+      <p>Dúvida sobre entrada ou banca? É respondida direto no grupo, sem robô.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="depoimentos">
+  <div class="sec-head">
+    <div class="ey">Quem já tá dentro</div>
+    <h2>O que os membros dizem</h2>
+    <p>Depoimentos reais de quem acompanha as tips no grupo VIP.</p>
+  </div>
+  <div class="testi-grid">
+    <figure class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Entrei desconfiado, mas em duas semanas já tinha recuperado o valor da mensalidade. As múltiplas vêm bem analisadas, dá pra confiar."</blockquote>
+      <figcaption><span class="av">R</span><div><b>Rafael M.</b><span>Membro há 4 meses</span></div></figcaption>
+    </figure>
+    <figure class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"O que me pegou foi a transparência. Posta green e red sem enganação. A gestão de banca salvou minha conta de apostar por impulso."</blockquote>
+      <figcaption><span class="av">B</span><div><b>Bruno A.</b><span>Membro há 7 meses</span></div></figcaption>
+    </figure>
+    <figure class="testi">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Melhor grupo que já entrei. As entradas chegam cedo, dá tempo de pegar odd boa. Fechei o mês passado no positivo tranquilo."</blockquote>
+      <figcaption><span class="av">D</span><div><b>Diego S.</b><span>Membro há 2 meses</span></div></figcaption>
+    </figure>
   </div>
 </section>
 
